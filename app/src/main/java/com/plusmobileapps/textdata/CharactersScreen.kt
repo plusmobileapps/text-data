@@ -95,6 +95,7 @@ fun CharacterItem(
                 contentDescription = null,
             )
             Text(character.name.evaluate())
+            Text(character.description.evaluate())
         }
     }
 }

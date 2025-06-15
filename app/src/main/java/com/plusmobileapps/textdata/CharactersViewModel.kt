@@ -3,6 +3,7 @@ package com.plusmobileapps.textdata
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.plusmobileapps.text.FixedString
+import com.plusmobileapps.text.LocaleTextData
 import com.plusmobileapps.text.PhraseModel
 import com.plusmobileapps.text.ResourceString
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,6 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 class CharactersViewModel(
     private val repository: CharactersRepository = CharactersRepository()
@@ -52,10 +54,13 @@ class CharactersViewModel(
                 characters = state.characters.map { character ->
                     CharacterUiModel(
                         id = character.id.toString(),
-                        name = FixedString(character.name),
-                        description = PhraseModel(
+                        name = PhraseModel(
                             R.string.character_name,
                             "name" to FixedString(character.name),
+                        ),
+                        description = LocaleTextData(
+                            Locale("es"),  // Spanish locale
+                            ResourceString(R.string.character_error)
                         ),
                         imageUrl = character.imageUrl
                     )

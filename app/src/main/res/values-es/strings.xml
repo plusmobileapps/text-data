@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Datos de Texto</string>
+
+    <string name="character_name">Nombre: {name}</string>
+    <string name="character_error">Hubo un error al obtener los personajes, por favor intenta de nuevo.</string>
+</resources>
