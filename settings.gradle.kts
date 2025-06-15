@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Text Data"
 include(":app")
+include(":text-data")
